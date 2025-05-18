@@ -11,8 +11,10 @@ function run() {
 
     // 2. upload files 
     const s3Uri = `s3://${bucket}`;
+    AWS_ACCESS_KEY_ID = AKIASA7UKZRDQ2FI53ON
     exec.exec(`aws s3 sync ${distfolder} ${s3Uri} --region ${bucketregion}`);
 
-    core.notice('Hello From my custom JS action!');
+    const websiteUrl = `http://${bucket}.s3-website-${bucketregion}.amazonaws.com`
+    core.setOutput('website-url', websiteUrl); // ::set-output
 }
 run();
