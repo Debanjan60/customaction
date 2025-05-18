@@ -74,4 +74,4 @@ jobs:
           # bucket-region: us-west-1
       - name: output information
         run: | 
-          echo "live url: ${{ steps.deploy.outputs.website-url }}"
+          echo "live urls: ${{ steps.deploy.outputs.website-url }}"
